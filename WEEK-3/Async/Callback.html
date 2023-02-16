@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <script>
+
+        //Function Sequence
+        Fun = (a) => {
+            document.getElementById("p1").innerHTML = a;
+        }
+        f1 = () => {
+            Fun("Hello");
+        }
+        f2 = () => {
+            Fun("Hii!!");
+        }
+        //End with hello
+        f2();
+        f1();
+
+        //End with hii 
+        //f1();
+        //f2();
+
+
+        //Sequence Control
+        Fun2 = (b) => {
+            document.getElementById("p2").innerHTML = b;
+        }
+        fullName = (fname, lname) => {
+            let name = fname + " " + lname;
+            Fun2(name);
+        }
+        fullName("Rakshit", "Patel");
+
+
+        //Callback Function
+        Fun3 = (c) => {
+            document.getElementById("p3").innerHTML = c;
+        }
+        animal = (name, color, myCB) => {
+            let f3 = "Animal name: " + name + ", Color: " + color;
+            myCB(f3);
+        }
+        animal("Rebbit", "White", Fun3);
+
+    </script>
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+//creat student table query
+CREATE TABLE `student`( `std_id` INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, `std_fname` VARCHAR(30) NOT NULL, `std_lname` VARCHAR(30) NOT NULL, `std_email` VARCHAR(50), `std_contact` TEXT(100)); 
+
+//Update qurey
+UPDATE `student`SET `City`= '1' WHERE `id`= 1; 
+UPDATE `student`SET `City`= '4' WHERE `id`= 2; 
+UPDATE `student`SET `City`= '3' WHERE `id`= 3; 
+UPDATE `student`SET `City`= ' ' WHERE `id`= 4; 
+UPDATE `student`SET `City`= '4' WHERE `id`= 5; 
+UPDATE `student`SET `City`= '1' WHERE `id`= 6; 
+UPDATE `student`SET `City`= '3' WHERE `id`= 7; 
+UPDATE `student`SET `City`= '1' WHERE `id`= 8; 
+UPDATE `student`SET `City`= '2' WHERE `id`= 9; 
+UPDATE `student`SET `City`= ' ' WHERE `id`= 10; 
+
+UPDATE `student` SET `std_contact`=9173361861 WHERE `id`= 1;
+UPDATE `student` SET `std_contact`=7861954188 WHERE `id`= 2;
+UPDATE `student` SET `std_contact`=9268562621 WHERE `id`= 3;
+UPDATE `student` SET `std_contact`=9586542315 WHERE `id`= 4;
+UPDATE `student` SET `std_contact`=8564231795 WHERE `id`= 5;
+UPDATE `student` SET `std_contact`=7568996554 WHERE `id`= 6;
+UPDATE `student` SET `std_contact`=9601122556 WHERE `id`= 7;
+UPDATE `student` SET `std_contact`=8520114521 WHERE `id`= 8;
+UPDATE `student` SET `std_contact`=9622011552 WHERE `id`= 9;
+UPDATE `student` SET `std_contact`=8875562201 WHERE `id`= 10;
+
+//insert query
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`) VALUES ('Raxit', 'Kotadiya', 'raxit123@gmail.com');  
+
+//delete query
+DELETE FROM `student` WHERE `std_id` = 6;
+
+//select one colume
+SELECT `std_id` FROM `student` WHERE `std_id`=5;
+
+//select all record
+SELECT * FROM `student` WHERE 1
+
+
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Raxit', 'Kotadiya', 'raxit123@gmail.com', '9173361861',1);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Dhruvil', 'Hirapara', 'dhruvil848@gmail.com','7861954188',4);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Vivek', 'Kotadiya', 'vivek845@gmail.com', '9268562621',3);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Milan', 'Bhanderi', 'milan25@gmail.com', '9586542315',4);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Meet', 'Bhanderi', 'meet65@gmail.com', '8564231795',4);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Parth', 'Vaghasiya', 'parthv1@gmail.com', '7568996554',1);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Disha', 'Parekh', 'disha143@gmail.com', '9601122556',3);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Vidhi', 'Dhaduk', 'vidhi276@gmail.com', '8520114521',1);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Rutvi', 'Ghelani', 'rutvi2510@gmail.com', '9622011552',2);
+INSERT INTO student (`std_fname`, `std_lname`, `std_email`, `std_contact`, `City`) VALUES ('Pooja', 'Soni', 'pooja43@gmail.com', '8875562201',2);
+
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Raxit', 'Kotadiya', 'raxit123@gmail.com', '9173361861');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Dhruvil', 'Hirapara', 'dhruvil848@gmail.com','7861954188');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Vivek', 'Kotadiya', 'vivek845@gmail.com', '9268562621');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Milan', 'Bhanderi', 'milan25@gmail.com', '9586542315');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Meet', 'Bhanderi', 'meet65@gmail.com', '8564231795');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Parth', 'Vaghasiya', 'parthv1@gmail.com', '7568996554');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Disha', 'Parekh', 'disha143@gmail.com', '9601122556');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Vidhi', 'Dhaduk', 'vidhi276@gmail.com', '8520114521');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Rutvi', 'Ghelani', 'rutvi2510@gmail.com', '9622011552');
+INSERT INTO professior (`prof_fname`, `prof_lname`, `prof_email`, `prof_contact`) VALUES ('Pooja', 'Soni', 'pooja43@gmail.com', '8875562201');
+
+
+//FOREIGN KEY
+CREATE TABLE `marks`( `id` INT(10)UNSIGNED AUTO_INCREMENT, `std_id` INT(10)UNSIGNED NOT NULL, `marks` INT(10) NOT NULL, PRIMARY KEY (id), FOREIGN KEY (`std_id`) REFERENCES student(`Id`));
+
+//inner join two table
+SELECT professior.prof_id, professior.prof_fname, student.std_fname FROM professior INNER JOIN student ON professior.prof_id=student.std_id;........
+SELECT student.Id, student.std_fname, student.std_lname,student.std_email, student.std_contact, marks.marks FROM student INNER JOIN marks ON student.Id = marks.std_id;
+
+
+//LEFT JOIN
+SELECT student.Id, student.std_fname, student.std_lname,student.std_email, student.std_contact, city.city FROM student 
+LEFT JOIN city ON student.city = city.id;
+
+//RIGHT JOIN
+SELECT student.Id, student.std_fname, student.std_lname,student.std_email, student.std_contact, city.city FROM student 
+RIGHT JOIN city ON student.city = city.id;
+
+//CROSS JOIN 
+SELECT student.Id, student.std_fname, student.std_lname,student.std_email, student.std_contact, city.city FROM student CROSS JOIN city;
+
+//SELF JOIN
+SELECT s1.Id, s2.std_fname 
+FROM student s1, student s2 
+WHERE s1.Id=s2.Id;
+
+//JOIN MULTYTABLE
+SELECT student.Id, student.std_fname, student.std_lname,student.std_email, student.std_contact, marks.marks, city.city 
+FROM student INNER JOIN marks ON student.Id = marks.std_id INNER JOIN City ON student.city = city.id;
+
+//Group By
+SELECT city.city, COUNT(student.city) AS Total FROM student INNER JOIN City ON student.city = city.id GROUP BY City ORDER BY COUNT(student.city) ASC;
+
+//HAVING CLASUE
+SELECT city.city, COUNT(student.city) AS Total FROM student INNER JOIN City ON student.city=city.id GROUP BY city HAVING  COUNT(student.city)>=3 ORDER BY COUNT(student.city) DESC;
+
+//AND, OR, NOT
+SELECT student.std_fname,city.city
+FROM student
+INNER JOIN city
+ON student.city=city.id
+WHERE city.city='jetpur' AND student.std_fname='Raxit';
+
+SELECT student.std_fname,city.city
+FROM student
+INNER JOIN city
+ON student.city=city.id
+WHERE city.city='Rajkot' OR student.std_fname='Raxit';
+
+SELECT student.std_fname,city.city
+FROM student
+INNER JOIN city
+ON student.city=city.id
+WHERE NOT city.city='Rajkot' OR student.std_fname='Raxit';
+
+//IN
+SELECT student.std_fname,city.city
+FROM student
+INNER JOIN city
+ON student.city=city.id
+WHERE city.city IN ('Jetpur', 'Ahmedabad')
+ORDER BY city ASC;
+
+//BETWEEN
+SELECT student.std_fname,marks.marks
+FROM student
+INNER JOIN marks
+ON student.id=marks.id
+WHERE marks.marks BETWEEN 45 AND 50
+ORDER BY marks ASC;
+
+//LIKE
+SELECT Id,std_fname,std_email,std_contact
+FROM student
+WHERE std_contact LIKE '9%'
+ORDER BY std_fname ASC;
+
+//ORDER BY
+select * from user ORDER BY column name ASC or DESC; //by default ASC
+
+//LIMIT
+select * from user LIMIT(1,6); //1 thi start and 6 to end
+
+//OFFSET
+select * from user OFFSET(1,6); //1 thi start and 6 to end
+
+//COUNT, SUM, MIN, MAX, AVG 
+SELECT COUNT(*) AS column_name FROM user 
+
+//WILDCARDS
+//REGEX
+//DISTANCE
+//NULL 
+//IS NOT NULL
+//COMMOT, ROLLBACK
+//SubQuery with EXISTS And NOT EXISTS
+//UNION AND UNION ALL 
+//IF AND CASE 
+//Arithmetic
+//String
+//Date and Time
+//ALTER
+//TURNCATE
+//VIEW 
+//INDEX
+//CRUD-UPDATE DATA
+//CRUD-DELETE DATA

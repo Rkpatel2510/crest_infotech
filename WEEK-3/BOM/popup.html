@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up</title>
+</head>
+
+<body>
+    <button onclick="Fun1()">Alert</button><br><br>
+    <button onclick="Fun2()">Confirm</button><br><br>
+    <button onclick="Fun3()">Prompt</button>
+
+    <script>
+        function Fun1() {
+            alert("Good Morning");
+        }
+
+
+        function Fun2() {
+            var txt;
+            if (confirm("Press a button!")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.write(txt);
+        }
+
+
+        function Fun3() {
+            let text;
+            let person = prompt("Please enter your name:", "");
+            if (person == null || person == "") {
+                text = "User cancelled the prompt.";
+            } else {
+                text = "Hello " + person + " How are you?";
+            }
+            document.write(text);
+        }
+    </script>
+
+    <br><br>
+    <button onclick="alert('Hello\nHow are you?')">Try it</button>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Elements</title>
+</head>
+
+<body>
+
+    <!-- find element by id -->
+    <p id="a"></p>
+
+
+    <!-- find element by tag name -->
+    <p>Good Morning</p>
+    <p>Good Night</p>
+    <p id="b"></p>
+
+
+    <!--////-->
+    <div id="main">
+        <p>Finding HTML Elements by Tag Name</p>
+        <p>This example demonstrates the getElementsByTagName method.</p>
+    </div>
+    <p id="demo"></p>
+
+
+    <!-- find element by classname -->
+    <p class="a1">Hello Friends</p>
+    <p class="a1">Hello Gays</p>
+    <p id="c"></p>
+
+    <!-- find element by css selector -->
+    <p class="a2">₹₹₹₹₹₹₹₹₹₹</p>
+    <P class="a2">$$$$$$$$$$</P>
+    <p id="d"></p>
+
+    <script>
+        //Find element by id
+        const a1 = document.getElementById("a").innerHTML = "Hello";
+
+
+        //Find element by tagname   
+        const a2 = document.getElementsByTagName("p");
+
+        //document.getElementById("b").innerHTML = "Test : " + a2[0].innerHTML;
+        //document.getElementById("b").innerHTML = "Test : " + a2[1].innerHTML;
+        document.getElementById("b").innerHTML = "Test : " + a2[2].innerHTML;
+
+
+        //--
+        const x = document.getElementById("main");
+        const y = x.getElementsByTagName("p");
+
+        document.getElementById("demo").innerHTML = 'The first paragraph inside "main" is: ' + y[0].innerHTML;
+
+        //Find element by classname
+        const a3 = document.getElementsByClassName("a1");
+        document.getElementById("c").innerHTML = "Test: " + a3[0].innerHTML;
+        // document.getElementById("c").innerHTML = "Test: " + a3[1].innerHTML;
+
+
+        //Find Element by css selectors
+        const a4 = document.querySelectorAll("p.a2");
+        document.getElementById("d").innerHTML = a4[0].innerHTML;
+
+            
+    </script>
+</body>
+
+</html>

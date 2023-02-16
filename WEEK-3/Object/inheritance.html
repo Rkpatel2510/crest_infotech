@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+
+<body>
+    <script>
+        //inheritance
+        class Car {
+            constructor(brand) {
+                this.carname = brand;
+            }
+            present() {
+                return 'I have a ' + this.carname;
+            }
+        }
+        class Model extends Car {
+            constructor(brand, mod) {
+                super(brand); //use super() for a call constructor
+                this.model = mod;
+            }
+            show() {
+                return this.present() + ', it is a ' + this.model;
+            }
+        }
+        let myCar = new Model("Honda", "Amaze");
+        console.log(myCar.show());
+
+        //static
+        class pet {
+            constructor(name) {
+                this.name = name;
+            }
+            static pet1() {
+                return "Cow";
+            }
+        }
+        let mypet = new pet("Dog");
+        document.write(pet.pet1());
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parse</title>
+</head>
+
+<body>
+    <script>
+
+        //array as json
+       
+        const arr = '[ "Raxit", "Dhruvil", "Kavy", "Harsh" ]';
+        const frd = JSON.parse(arr);
+        console.log(frd[2]);
+
+        const details = '{"name":"Raxit", "birth":"2003-10-25", "city":"jetpur"}';
+        const obj = JSON.parse(details);
+        obj.birth = new Date(obj.birth);
+        document.write(obj.name + "," + obj.birth);
+
+    </script>
+</body>
+
+</html>

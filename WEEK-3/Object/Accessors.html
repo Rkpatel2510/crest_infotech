@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessors</title>
+</head>
+
+<body>
+    <script>
+        //Getter Keyword
+        const fruit = {
+            mango: "Yellow",
+            apple: "Red",
+            stroberry: "Pink",
+            get color() {
+                return this.stroberry;
+            }
+        };
+        document.write(fruit.color);
+        document.write("<br>");
+        document.write("<br>");
+
+        //Setter Keyword
+        const bio = {
+            firstName: "Rakshit",
+            lastName: "Patel",
+            age: "",
+            set old(old) {
+                this.age = old;
+            }
+        };
+        bio.old = "Guj";
+        document.write(bio.age);
+        document.write("<br>"); 
+    </script>
+</body>
+
+</html>

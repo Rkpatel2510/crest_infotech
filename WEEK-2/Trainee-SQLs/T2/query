@@ -1,0 +1,62 @@
+Schema:-
+create table employee(empid int primary key,empname varchar(100), department varchar(50),contactno bigint, emaildid varchar(100), empheadid int)
+
+Schema:-
+create table empdept(deptid varchar(50) primary key,deptname varchar(100), dept_off varchar(100), depthead int foreign key references employee(empid))
+
+Schema:-
+create table empsalary(empid int foreign key references employee(empid), salary bigint, ispermanent varchar(3))
+
+Schema:-
+create table project(projectid varchar(50) primary key, duration int)
+
+Schema:-
+create table country(cid varchar(50) primary key, cname varchar(100))
+
+Schema:-
+create table clienttable(clientid varchar(50) primary key, clientname varchar(100), cid varchar(50) references country(cid))
+
+Schema:-
+create table empproject(empid int foreign key references employee(empid), projectid varchar(50) foreign key references project(projectid), clientid varchar(50) foreign key references clienttable(clientid),startyear int, endyear int)
+
+#Simple Query
+
+1.   Select the detail of the employee whose name start with P.
+
+2.   How many permanent candidate take salary more than 5000.
+
+3.   Select the detail of employee whose emailId is in gmail.
+
+4.   Select the details of the employee who work either for department E-104 or E-102.
+
+5.   What is the department name for DeptID E-102?
+
+6.  What is total salarythat is paid to permanent employees?
+
+7.  List name of all employees whose name ends with a.
+
+8.  List the number of department of employees in each project.
+
+9.  How many project started in year 2010.
+
+10.  How many project started and finished in the same year.
+
+11.  select the name of the employee whose name's 3rd charactor is 'h'.
+
+
+#Neated Query
+1.   Select the department name of the company which is assigned to the employee whose employee id is grater 103.
+
+2.   Select the name of the employee who is working under Abhishek.
+
+3.   Select the name of the employee who is department head of HR.
+
+4.   Select the name of the employee head who is permanent.
+
+5.   Select the name and email of the Dept Head who is not Permanent.
+
+6.   Select the employee whose department off is monday
+
+7.   select the indian clinets details.
+
+8.   select the details of all employee working in development department.

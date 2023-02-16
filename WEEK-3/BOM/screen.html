@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen</title>
+</head>
+
+<body>
+    <h2>Window Screen</h2>
+    <script>
+
+        document.write("Width: " + screen.width + "<br>");
+        document.write("height: " + screen.height + "<br>");
+        document.write("avaiWidth: " + screen.avaiwidth + "<br>");
+        document.write("avaiHeight: " + screen.avaiHeight + "<br>");
+        document.write("colorDepth: " + screen.colorDepth + "<br>");
+        document.write("pixelDepth: " + screen.pixelDepth + "<br>");
+
+    </script>
+
+    <br><br>
+
+    <script>
+        function xy() {
+            window.location.assign("https://www.instagram.com/accounts/login/")
+        }; 
+    </script>
+    <button onclick="xy()">Click Me</button>
+
+    <br><br>
+
+    <h2>Window history</h2>
+    <input type="button" value="Forward" onclick="window.history.forward()"></input>
+    <input type="button" value="Back" onclick="window.history.back()"></input>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await</title>
+</head>
+<body>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+
+    <script>
+        
+        Fun = (r) => {
+            document.getElementById("p1").innerHTML = r;
+        }
+
+        async function func() {
+            return "Good Morning 🙂";
+        } 
+
+        func().then(
+            function(value) {Fun(value);},
+            function(erroe) {Fun(error);}
+        );   
+
+
+        //Timeout
+        async function func1() {
+            let pro = new Promise(function (Resolve, Reject) {
+                setTimeout(() => {
+                    Resolve("Hello gays");
+                }, 2000);
+            });
+           document.getElementById("p2").innerHTML = await pro;
+           // console.log(await pro);            
+        }
+        func1();
+
+
+        //file
+        async function func2() {
+            let pro1 = new Promise(function (Resolve, Reject){
+                let a = new XMLHttpRequest();
+                a.open('GET', "path1.html");
+                a.onload = function () {
+                    if (a.status == 200) {
+                        Resolve(a.response);
+                    } else {
+                        Reject("File not found");
+                    }
+                };
+                a.send();
+            });
+            document.getElementById("p3").innerHTML = await pro1
+        }
+        func2();
+    </script>
+
+</body>
+</html>

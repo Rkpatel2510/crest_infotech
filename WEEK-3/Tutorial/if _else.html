@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else and switch</title>
+</head>
+
+<body>
+    <script>
+        //if else
+        const age = 17;
+        let msg;
+        if (age > 18) {
+            msg = "You can drive any vehical";
+        } else if (age < 18 && age > 16) {
+            msg = "You can drive only without gear vehicals";
+        } else {
+            msg = "You can not drive a vehicals";
+        }
+        document.write(msg);
+        document.write("<br>");
+        document.write("<br>");
+
+
+        //switch
+        let a = 25;
+
+        switch (a) {
+
+            case 2:
+                a = 'Dhruvil born date';
+                break;
+            case 25:
+                a = 'Raxit born date';
+                break;
+            default:
+                a = 'not found';
+                break;
+        }
+        document.write(a);
+    </script>
+</body>
+
+</html>

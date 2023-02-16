@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error</title>
+</head>
+
+<body>
+
+    <input id = "box" type="text">
+    <button type="button" onclick="values()" >Input</button>
+
+
+    <p id = "none"></p>
+    <script>
+        function values() {
+
+            const message = document.getElementById("none");
+            message.innerHTML = "";
+
+            let a = document.getElementById("box").value;
+            try {
+                if (a == "") throw "is empty";
+
+                if (isNaN(a)) throw "is not a number";
+                
+                a = Number(a);
+                if (a > 200) throw "is too high";
+                if (a < 100) throw "is too low";
+            }
+            catch (err) {
+                message.innerHTML = "Input " + err;
+            }
+            finally {
+                document.getElementById("box").value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

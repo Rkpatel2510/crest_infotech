@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literal and new keyword</title>
+</head>
+<body>
+    <p id = "a"></p>
+    <p id = "b"></p>
+    <p id = "c"></p>
+    <script>
+        //Literal
+        const myBio = {}
+        myBio.fname = "Raxit";
+        myBio.lname = "Kotadiya";
+        myBio.age   = 19;
+
+        const x = "My name is " + myBio.fname + " " + myBio.lname + "."
+        document.getElementById("a").innerHTML = x;
+        document.write("<br>");
+
+
+        //new keyword
+        const txt = new Object();
+        txt.fname = "Kavy";
+        txt.lname = "Borad";
+        txt.age   = 20;
+        document.getElementById("b").innerHTML = txt.fname + " is " + txt.age + " year old.";
+        document.write("<br>");
+
+
+        //Mutable
+        const text = {
+            firstname : "Kavy",
+            lastname : "Hirapara",
+            age: 18
+        }
+
+        const text1 = text;
+        text1.firstname = "Dhruvil";
+
+        document.getElementById("c").innerHTML = "My name is " + text.firstname + " " + text.lastname + ".";
+
+    </script>
+</body>
+</html>

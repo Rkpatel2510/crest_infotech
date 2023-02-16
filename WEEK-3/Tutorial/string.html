@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+
+<body>
+    <script>
+        // String Length
+        let txt1 = "Hello Gays!!";
+        document.write(txt1.length);
+        document.write("<br>");
+        document.write("<br>");
+
+        // String slice() AS substring() AS substr()
+        let txt2 = "Raxit, Nikhil, Ravi";
+        document.write(txt2.slice(7, 10));
+        document.write("<br>");
+
+        document.write(txt2.substring(6, 18));
+        document.write("<br>");
+
+        document.write(txt2.substr(2, 7));
+        document.write("<br>");
+        document.write("<br>");
+
+        // String Concat
+        let a = "Good";
+        let b = "Morning";
+        let c = a.concat(" " + b);
+        document.write(c);
+        document.write("<br>");
+        document.write("<br>");
+
+        // String toUpperCase()
+        let fname = "raxit";
+        document.write(fname.toUpperCase());
+        document.write("<br>");
+
+        // String toLowerCase()
+        let lname = "KOTADIYA";
+        document.write(lname.toLowerCase());
+        document.write("<br>");
+        document.write("<br>");
+
+        // String trim() (Remove Whitespace both side)
+        let name = "      Raxit Kotadiya       ";
+        document.write(name.trim());
+        document.write("<br>");
+        document.write("<br>");
+
+        // String padEnd()
+        let txt = "25";
+        document.write(txt.padEnd(4, "o"));
+        document.write("<br>");
+        document.write("<br>");
+
+        // String charCodeAt() and String charAt()
+        let r = "Raxit";
+        document.write(r.charCodeAt(2));
+        document.write("<br>");
+
+        document.write(r.charAt(3));
+        document.write("<br>");
+        document.write("<br>");
+
+        // String indexOf(), String lastIndexOf(), String startsWith(),String endsWith(), String search(), String match(),  String includes()
+        let str = "Hello!, Good Evening";
+        document.write(str.indexOf("Good"));
+        document.write("<br>");
+
+        document.write(str.lastIndexOf());
+        document.write("<br>");
+
+        document.write(str.startsWith("Hello"));
+        document.write("<br>");
+
+        document.write(str.endsWith("Evening"));
+        document.write("<br>");
+
+        document.write(str.search(","))
+        document.write("<br>");
+
+        document.write(str.match(/ing/g));
+        document.write("<br>");
+
+        document.write(str.includes("Good Evening"));
+       
+    </script>
+</body>
+
+</html>

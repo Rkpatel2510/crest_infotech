@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <p id="name"></p>
+    <p id="names"></p>
+    <p id="text"></p>
+    <p id="cloth"></p>
+    <p id="num"></p>
+    <script>
+        //
+        const frd = ["Raxit", "Kavy", "Harsh"];
+        //frd.pop();
+        //frd.push("vinay");
+        //frd.shift();
+        //frd.unshift("Dhruvil");
+        //delete frd[1];
+        document.getElementById("name").innerHTML = frd;
+        //document.getElementById("name").innerHTML = frd.toString();
+        document.write("<br>");
+        
+
+        //
+        const frds = [];
+        frds[0] = "Vivek";
+        frds[1] = "Dhruvil";
+        frds[2] = "Raj";
+        document.getElementById("names").innerHTML = frds[1];
+        document.write("<br>");
+
+
+        //
+        const bike = ["passion", "r15", "v15", "fz5"];
+        let bLen = bike.length;
+
+        let text = "<ul>";
+        for (let i = 0; i < bLen; i++) {
+            text += "<li>" + bike[i] + "</li>";
+        }
+        text = text + "</ul>";
+        document.getElementById("text").innerHTML = text;
+        document.write("<br>");
+
+
+        //
+        const cloths = ["shirt", "t-shirt", "pents"];
+
+        let txt = "<ul>";
+        cloths.forEach(myFunction);
+        txt += "</ul>";
+
+        document.getElementById("cloth").innerHTML = txt;
+
+        function myFunction(value) {
+            txt += "<li>" + value + "</li>";
+        }
+        document.write("<br>"); 
+
+
+        //
+        const number = [27, 526, 5, 65, 25, 11];
+        number.sort(function(a, b) {return a - b});
+        // number.sort(function(a, b) {return b - a});
+        document.getElementById("num").innerHTML =number;
+
+
+    </script>
+</body>
+
+</html>

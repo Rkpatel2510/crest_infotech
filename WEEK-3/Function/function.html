@@ -1,0 +1,56 @@
+<script>
+    //simple
+    var a = myfunction(2,5);
+    console.log(a);
+
+    function myfunction(a,b){
+        return a * b;
+    };
+
+
+    //expression 
+    let x = function(a,b){return a + b};
+    document.write(x(25, 27));
+    document.write("<br>");
+
+
+    //constructor
+    const a1 = new Function("a", "b", "return a * b");
+    console.log(a1(15, 10));
+
+
+    //Self-Invoking Functions
+    (function(){
+        document.write("Hello Gays!!");
+    })();
+    document.write("<br>");
+
+
+    //Functions Can Be Used as Values
+    function myfun(a, b){
+        return a * b;
+    }
+    const a3 = myfun(4, 3) * 2;
+    console.log(a3);
+
+
+    //Object toSring
+    function fun1(a, b) {
+        return a * b;
+    }
+    let f1 = fun1.toString();
+    document.write(f1);
+    document.write("<br>");
+
+    //Object arguments.length
+    function fan2(a, b) {
+        return arguments.length;
+    }
+    console.log(fan2(1, 2, 3, 4, 5));
+
+
+    //Arrow Function
+    const y = (x, x1) => x / x1;
+    document.write(y(50, 5));
+    document.write("<br>");
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties</title>
+</head>
+
+<body>
+    <script>
+        //delete
+        const person = {
+            firstname: "Raxit",
+            lname: "Kotadiya",
+            age: 25,
+        }
+        delete person.age;
+        document.write(person.firstname + " " + person.age);
+        // document.write(Object.values(person));    // => Display a values in Object 
+        document.write("<br>");
+        document.write("<br>");
+
+
+        //Nested Object
+        const veh = {
+            car1: "Amaze",
+            car2: "MG",
+            car3: "Lemborgini",
+            bike: {
+                bike1: "pession",
+                bike2: "r15",
+                bike3: "v15"
+            }
+        }
+        document.write(veh.bike.bike2);
+        //document.write(veh.bike["bike2"]);
+        document.write("<br>");
+
+
+        //Nested Objecty and Array
+        let x = "";
+        const myObj = {
+            name: "Vivek",
+            age: 26,
+            cars: [
+                { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+                { name: "BMW", models: ["320", "X3", "X5"] },
+                { name: "Fiat", models: ["500", "Panda"] }
+            ]
+        }
+
+        for (let i in myObj.cars) {
+            x += "<h3>" + myObj.cars[i].name + "</h3>";
+            for (let j in myObj.cars[i].models) {
+                x = x + myObj.cars[i].models[j] + "<br>";
+            }
+        }
+
+        document.write(x);
+        
+    </script>
+</body>
+
+</html>

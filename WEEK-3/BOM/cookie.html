@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-sxle=1.0">
+    <title>Cookie</title>
+</head>
+
+<body>
+
+    <script>
+        function setCookie(fname, value, exp) {
+            const A = new Date();
+            A.setTime(A.getTime() + (exp * 24 * 60 * 60));
+            let expires = "expires=" + A.toUTCString();
+            document.cookie = fname + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(fname) {
+            let name = fname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let x = decodedCookie.split(';');
+            for (let i = 0; i < x.length; i++) {
+                let c = x[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            let user = getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 30);
+                }
+            }
+        }
+    </script>
+
+    <body onload="checkCookie()"></body>
+</body>
+
+</html>

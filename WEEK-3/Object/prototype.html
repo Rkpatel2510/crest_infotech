@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <script>
+        function student(first, last, age, city) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.city = city
+        }
+
+        student.prototype.nationality = "Gujarati";
+        const std = new student("Rohan", "Shah", 16, "indor");
+        document.write("The nationality of a student " + std.nationality); 
+        
+    </script>
+</body>
+
+</html>

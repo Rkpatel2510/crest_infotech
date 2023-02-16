@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>
+
+    <script>
+        //for loop
+        let text = "";
+        for (let i = 0; i < 5; i++) {
+            text += i + "<br>";
+        }
+        document.write(text);
+        document.write("<br>");
+
+        const name = ["Raxit", "Harsh", "Dhruvil", "Kavy"];
+        let i, len, txt;
+        for (i = 0, len = name.length, txt = ""; i < len; i++) {
+            txt += name[i] + "<br>";
+        }
+        document.write(txt);
+        document.write("<br>");
+        document.write("<br>");
+
+        //for in 
+        const person = { fname: "Raxit", lname: "Kotadiya", age: 19 };
+
+        let data = "";
+        for (let a in person) {
+            data = data + person[a] + " ";
+        }
+        document.write(data);
+        document.write("<br>");
+        document.write("<br>");
+
+        //for of
+        const color = ["Red", "Blue", "Green"];
+
+        let rang = "";
+        for (let x of color) {
+            rang += x + "<br>";
+        }
+        document.write(rang);
+        document.write("<br>");
+        document.write("<br>");
+
+        //while AND DO while
+        let num = "";
+        let a = 0;
+
+        while (a < 10) {
+            num += "<br>The number is " + a;
+            a++;
+        }
+
+        // do {
+        //     num += "<br>The number is " + a;
+        //     a++;
+        // }
+        // while (a < 10);
+
+        document.write(num);
+    </script>
+</body>
+
+</html>

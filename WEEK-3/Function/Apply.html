@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title>
+</head>
+
+<body>
+    <script>
+
+        //apply method
+        const person = {
+            fullName: function () {
+                return this.fName + " " + this.lName;
+            }
+        }
+
+        const person1 = {
+            fName: "Raxit",
+            lName: "Patel"
+        }
+
+        console.log(person.fullName.apply(person1));
+
+
+        //with arguments
+        const std = {
+            fullName: function (city, country) {
+                return this.fName + " " + this.lName + "," + city + "," + country;
+            }
+        }
+
+        const std1 = {
+            fName: "Lakhan",
+            lName: "Patel"
+        }
+
+        console.log(std.fullName.apply(std1, ["Dwarka", "Gujarat"]));
+
+
+        //max method on array
+        document.write(Math.max.apply("",[1,62,43,752,45,5,99]));
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+
+<body>
+    <h2>Window Location</h2>
+    <script>
+        //window location
+        document.write("href: " + location.href + "<br>");
+        document.write("hostname: " + location.hostname + "<br>");
+        document.write("pathname: " + location.pathname + "<br>");
+        document.write("protocol: " + location.protocol + "<br>");
+        document.write("port: " + location.port + "<br>");        
+
+        function xy() {
+            window.location.assign("http://127.0.0.1:5500/BOM/screen.html")
+        }
+    </script>
+<br>
+        <button onclick="xy()">Click Me</button>
+
+</body>
+
+</html>

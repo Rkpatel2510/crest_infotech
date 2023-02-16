@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringyfy</title>
+</head>
+
+<body>
+
+    <script>
+
+        //obj
+        const text1 = { name: "Raxit", age: 19, city: "Ahmedabad" };
+        const myJSON = JSON.stringify(text1);
+        console.log(myJSON);
+
+        // //array
+        const arr = ["car", "bike", "truck", "bus"];
+        const myjson1 = JSON.stringify(arr);
+        document.write(myjson1);
+        document.write("<br>");
+        document.write("<br>"); 
+
+        //storing data
+        const txt1 = { name: "Dhruvil", age: 20, City: "Amreli" };
+        const myJSON2 = JSON.stringify(txt1);
+        localStorage.setItem("tetsJSON", myJSON2);
+
+        let text = localStorage.getItem("tetsJSON");
+        let obj = JSON.parse(text);
+        document.write(obj.name);
+
+    </script>
+
+</body>
+
+</html>

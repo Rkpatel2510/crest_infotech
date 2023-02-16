@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call function</title>
+</head>
+
+<body>
+    <script>
+        //Call method
+        const person = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        const person1 = {
+            firstName: "Rahul",
+            lastName: "Tripathi"
+        }
+        const person2 = {
+            firstName: "Siddharth",
+            lastName: "Sharma"
+        }
+        document.write(person.fullName.call(person2));
+        document.write("<br>");
+
+
+        //Call Method with Arguments
+        const car = {
+            info: function (color, seat ) {
+            return this.brand + ":"+ color + " " + this.model + ", " + seat + " seater";
+            }
+        }
+
+        const car1 = {
+            brand: "Hyundai",
+            model: "Verana"
+        }
+
+        const car2 = {
+            brand: "Tata",
+            model: "Nexon"
+        }
+
+        document.write(car.info.call(car1, "Black", 5));
+    </script>
+</body>
+
+</html>
